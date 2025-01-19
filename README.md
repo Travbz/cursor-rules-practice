@@ -80,24 +80,17 @@ Generates a random sale with western flair.
 
 ## 🌟 Setup Instructions
 
-### Gather Yer Supplies
+### Gather Yer Supplies and Open For Business
 ```bash
 # Create and saddle up your virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-# Install the necessities
-pip install -r requirements.txt
+chmod +x setup.sh && ./setup.sh
 ```
 
-### Open for Business
-```bash
-# Fire up the backend
-python app.py
 
-# Serve the frontend (in a new terminal)
-cd frontend
-python -m http.server 8081
+### Set Er A-Burnin'
+```bash
+# Clean up after yourself
+chmod +x cleanup.sh && ./cleanup.sh
 ```
 
 Visit `http://localhost:8081` to start trading!
