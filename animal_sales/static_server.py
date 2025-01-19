@@ -1,7 +1,9 @@
 from flask import Flask, send_from_directory
 import os
 
-app = Flask(__name__, static_folder='frontend')
+# Get the absolute path to the frontend directory
+frontend_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'frontend')
+app = Flask(__name__, static_folder=frontend_dir)
 
 @app.route('/')
 def index():
@@ -13,4 +15,5 @@ def static_files(path):
 
 if __name__ == '__main__':
     port = int(os.environ.get('STATIC_PORT', 8081))
-    app.run(port=port)
+    print(f"🌐 Serving frontend files from: {frontend_dir}")
+    app.run(port=port, debug=True)
