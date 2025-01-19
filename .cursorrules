@@ -1,19 +1,35 @@
 {
     "session": {
-        "name": "Exotic Animal Sales Tracker",
+        "name": "Frontier Trading Post - Exotic Animal Sales",
         "type": "full_stack",
-        "duration": "single_session"
+        "duration": "single_session",
+        "theme": "western",
+        "mode": "yolo_ready"
     },
     "tech_stack": {
         "frontend": {
             "language": "javascript",
             "framework": "vanilla",
-            "styling": "css"
+            "styling": "css",
+            "required_features": [
+                "modal_system",
+                "sorting_tables",
+                "filter_system",
+                "price_calculator",
+                "rickroll_integration"
+            ]
         },
         "backend": {
             "language": "python",
             "framework": "flask",
-            "database": "sqlite"
+            "database": "sqlite",
+            "required_packages": [
+                "flask==3.0.0",
+                "flask-sqlalchemy==3.1.1",
+                "flask-cors==4.0.0",
+                "faker==20.1.0",
+                "python-dotenv==1.0.0"
+            ]
         }
     },
     "project_structure": {
@@ -22,7 +38,25 @@
             "frontend",
             "backend",
             "database"
-        ]
+        ],
+        "key_files": {
+            "backend": [
+                "app.py",
+                "models.py",
+                "animals.py",
+                "db_init.py"
+            ],
+            "frontend": [
+                "index.html",
+                "styles.css",
+                "script.js"
+            ],
+            "config": [
+                ".env",
+                ".gitignore",
+                "requirements.txt"
+            ]
+        }
     },
     "development": {
         "ports": {
@@ -31,7 +65,8 @@
         },
         "environment": {
             "python_version": "3.12",
-            "node_version": "not_required"
+            "node_version": "not_required",
+            "os": "cross_platform"
         }
     },
     "workflow": {
@@ -43,52 +78,94 @@
                     "Create directory structure",
                     "Initialize virtual environment",
                     "Install dependencies",
-                    "Create .gitignore"
+                    "Create .gitignore",
+                    "Initialize database schema",
+                    "Set up CORS configuration"
                 ]
             },
             {
                 "order": 2,
                 "name": "backend_development",
                 "tasks": [
-                    "Create database models",
-                    "Set up Flask routes",
-                    "Implement CORS",
-                    "Create data generation utilities"
+                    "Create database models with quantity support",
+                    "Set up Flask routes with error handling",
+                    "Implement CORS with proper origins",
+                    "Create data generation with western names",
+                    "Add price calculation logic",
+                    "Implement filtering and sorting"
                 ]
             },
             {
                 "order": 3,
                 "name": "frontend_development",
                 "tasks": [
-                    "Create HTML structure",
-                    "Implement styling",
+                    "Create responsive HTML structure",
+                    "Implement western-themed CSS",
                     "Add JavaScript functionality",
-                    "Connect to backend API"
-                ]
-            },
-            {
-                "order": 4,
-                "name": "automation",
-                "tasks": [
-                    "Create setup script",
-                    "Create cleanup script",
-                    "Add static file server"
+                    "Connect to backend API",
+                    "Implement modal system",
+                    "Add rickroll complaint system"
                 ]
             }
         ]
     },
     "success_criteria": [
-        "Backend API endpoints working",
-        "Frontend displays data correctly",
-        "Data generation functional",
-        "Clean project shutdown"
+        "Backend API endpoints working with proper status codes",
+        "Frontend displays data with proper formatting",
+        "Data generation includes quantities",
+        "Clean project shutdown",
+        "All CRUD operations functional",
+        "Proper error handling implemented",
+        "Western theme consistent throughout",
+        "Rickroll complaint system operational"
     ],
     "fun_features": {
         "cowboy_mode": {
             "howdy": "John Wayne quote response",
             "bang_bang": "Billy the Kid mode",
             "default": "Clint Eastwood quote"
+        },
+        "name_generation": {
+            "western_ratio": 0.7,
+            "modern_ratio": 0.3,
+            "sample_names": [
+                "Wild Bill",
+                "Doc Holliday",
+                "Calamity Jane",
+                "Quick Draw McGraw"
+            ]
+        },
+        "animals": {
+            "types": [
+                "Ornery Bull",
+                "Dirty Rotten Mule",
+                "Wild Mustang",
+                "Mean ol' Buckin Bull"
+            ],
+            "price_range": {
+                "min": 35.00,
+                "max": 80.00
+            }
+        },
+        "error_messages": {
+            "404": "This ain't the trail you're looking for",
+            "500": "Looks like our horse threw a shoe",
+            "validation": "That ain't how we do business round here"
         }
+    },
+    "testing": {
+        "backend": [
+            "Test all API endpoints",
+            "Verify database operations",
+            "Check error handling",
+            "Validate CORS settings"
+        ],
+        "frontend": [
+            "Test responsive design",
+            "Verify sorting functionality",
+            "Check filter operations",
+            "Confirm rickroll integration"
+        ]
     }
 }
 
@@ -123,26 +200,36 @@ animal_sales/
 ### Animals Available
 ```python
 ANIMALS = {
-    'African Grey Parrot': 1200,
-    'Ball Python': 300,
-    'Bearded Dragon': 150,
-    'Bengal Cat': 2500,
-    'Capybara': 3000,
-    'Chinchilla': 200,
-    'Cockatoo': 1500,
-    'Corn Snake': 100,
-    'Fennec Fox': 4500,
-    'Ferret': 250,
-    'Hedgehog': 300,
-    'Iguana': 200,
-    'Koi Fish': 500,
-    'Maine Coon Cat': 1800,
-    'Macaw': 2000,
-    'Muntjac Deer': 5000,
-    'Sugar Glider': 400,
-    'Savannah Cat': 15000,
-    'Tarantula': 150,
-    'Tortoise': 800
+    'Ornery Bull': 55,
+    'Dirty Rotten Mule': 8,
+    'Mean Ol Buckin Bull': 65,
+    'Kickin Mule': 12,
+    'Rattler with Attitude': 3,
+    'Stubborn Pack Donkey': 9,
+    'Wild Mustang': 45,
+    'Rough Stock Bull': 70,
+    'One-Eyed Coyote': 2,
+    'Fence-Jumpin Mare': 35,
+    'Untamed Bronco': 50,
+    'No Good Billy Goat': 4,
+    'Spittin Llama': 20,
+    'Angry Ranch Dog': 3,
+    'Ornery Longhorn': 48,
+    'Buckin Paint Horse': 38,
+    'Snake-Bit Quarter Horse': 28,
+    'Cattle-Chasin Heeler': 6,
+    'Barn-Bustin Buffalo': 80,
+    'Outlaw Stallion': 60,
+    'Mangy Prairie Dog': 1,
+    'Cross-Eyed Rooster': 2,
+    'Limpin Jackrabbit': 1,
+    'Toothless Raccoon': 2,
+    'Three-Legged Skunk': 1,
+    'Tone-Deaf Turkey': 3,
+    'Lazy Pack Rat': 1,
+    'Grumpy Groundhog': 2,
+    'Clumsy Armadillo': 2,
+    'Balding Vulture': 1
 }
 ```
 
