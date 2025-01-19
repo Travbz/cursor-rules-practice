@@ -1,0 +1,193 @@
+CONFIGURATION: {
+    "programming_language": ["python", "javascript"],
+    "yolo_mode": "is_bang_bang?" ,
+    "max_iterations": 3,
+    "success_criteria": [
+       "UI loads customer data"
+    ],
+    "working_directory": "./news-gap/"
+}
+
+Workstation is a Macbook Pro on M3
+
+# Rules that apply to all interactions and signal to me that you are context aware:
+    - Initiate each interaction with a unquoted Clint Eastwood quote with no "- Clint Eastwood" reference.
+    - If i say "howdy" reply with a John Wayne quote.
+    - If i say "bang bang" you should respond like Billy the Kid but keep yer yappin to a minimum, and proceed to the next iteration bc yolo mode is enabled.
+
+# Animal Sales Tracking Application
+
+## Project Structure
+```
+animal_sales/
+├── backend/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── db_init.py
+│   └── animals.py
+├── database/
+│   └── schema.sql
+├── frontend/
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
+└── app.py
+```
+
+## Data Models
+
+### Animals Available
+```python
+ANIMALS = {
+    'African Grey Parrot': 1200,
+    'Ball Python': 300,
+    'Bearded Dragon': 150,
+    'Bengal Cat': 2500,
+    'Capybara': 3000,
+    'Chinchilla': 200,
+    'Cockatoo': 1500,
+    'Corn Snake': 100,
+    'Fennec Fox': 4500,
+    'Ferret': 250,
+    'Hedgehog': 300,
+    'Iguana': 200,
+    'Koi Fish': 500,
+    'Maine Coon Cat': 1800,
+    'Macaw': 2000,
+    'Muntjac Deer': 5000,
+    'Sugar Glider': 400,
+    'Savannah Cat': 15000,
+    'Tarantula': 150,
+    'Tortoise': 800
+}
+```
+
+### Database Schema
+```sql
+CREATE TABLE sales (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    customer_name TEXT NOT NULL,
+    animal TEXT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    sale_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## Components
+
+### Backend (Python)
+
+#### models.py
+- SQLAlchemy model for Sales table
+- Database connection management
+
+#### animals.py
+- Contains ANIMALS dictionary with prices
+- Functions for generating random sales:
+  - generate_customer_name()
+  - generate_random_purchase(): Selects 1-4 random animals
+
+#### app.py (Flask Application)
+Routes:
+- GET /api/sales: Returns all sales data
+- POST /api/generate: Generates new random sale
+- GET /api/sales/by-animal: Returns sales grouped by animal
+
+### Frontend
+
+#### index.html
+- Clean table layout
+- "Generate Sale" button
+- Sorting controls for each column
+- Total sales summary
+
+#### script.js
+- Handles "Generate Sale" button clicks
+- Fetches and displays sales data
+- Implements table sorting
+- Updates totals
+
+## API Endpoints
+
+### GET /api/sales
+Response:
+```json
+{
+    "sales": [
+        {
+            "id": 1,
+            "customer_name": "John Smith",
+            "animal": "Bengal Cat",
+            "price": 2500.00,
+            "sale_date": "2025-01-18T10:30:00"
+        }
+    ]
+}
+```
+
+### POST /api/generate
+Response:
+```json
+{
+    "sale": {
+        "customer_name": "Alice Johnson",
+        "purchases": [
+            {
+                "animal": "Macaw",
+                "price": 2000.00
+            },
+            {
+                "animal": "Tortoise",
+                "price": 800.00
+            }
+        ],
+        "total": 2800.00
+    }
+}
+```
+
+## Development Setup (MacBook Pro M1)
+
+1. Create and activate virtual environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+2. Install dependencies:
+```bash
+pip3 install flask flask-sqlalchemy faker python-dotenv
+```
+
+3. Initialize database:
+```bash
+python3 backend/db_init.py
+```
+
+4. Run application:
+```bash
+python3 app.py
+```
+
+5. Serve frontend:
+```bash
+cd frontend
+python3 -m http.server 8080
+```
+
+Access:
+- Backend API: http://localhost:5000
+- Frontend: http://localhost:8080
+
+## Features
+- Empty table on initial load
+- Click button to generate random sale
+- Each sale includes 1-4 random animals
+- Sortable by animal type, price, or date
+- Persistent data between page refreshes
+- Summary of total sales
+
+Note: For M1 MacBook Pro optimizations:
+- Using native Python 3 for Apple Silicon
+- SQLite is natively supported on M1
+- Local development servers run natively without Rosetta

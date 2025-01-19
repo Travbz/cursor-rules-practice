@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exotic Animal Sales Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🦜 Exotic Animal Sales Tracker 🐍</h1>
+        
+        <div class="controls">
+            <button id="generateSale" class="btn">Generate New Sale</button>
+            <div class="summary">
+                <span>Total Sales: $<span id="totalSales">0.00</span></span>
+                <span>Total Transactions: <span id="totalTransactions">0</span></span>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th data-sort="id">ID ⇅</th>
+                        <th data-sort="customer_name">Customer ⇅</th>
+                        <th data-sort="animal">Animal ⇅</th>
+                        <th data-sort="price">Price ⇅</th>
+                        <th data-sort="sale_date">Date ⇅</th>
+                    </tr>
+                </thead>
+                <tbody id="salesTable">
+                    <!-- Sales data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
