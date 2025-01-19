@@ -1,71 +1,68 @@
-# Cursor Rules Practice
+# 🤠 Frontier Trading Post
 
-A collection of coding exercises and projects using Cursor IDE, featuring an Exotic Animal Sales Tracker application.
+Welcome to the wildest animal trading post this side of the Mississippi! This here establishment helps ya keep track of all yer critter dealings in proper frontier fashion.
 
-## 🦜 Exotic Animal Sales Tracker
+## 🐎 Features
 
-A full-stack web application for tracking exotic animal sales, built with Flask and vanilla JavaScript.
+- **Strike a Deal**: Generate random sales with our finest selection of frontier animals
+- **Buy Stock**: Hand-pick yer own critters, set the quantity, and seal the deal
+- **Track Yer Sales**: Keep tabs on every transaction in our fancy ledger
+- **Search & Sort**: Find any varmint or customer faster than a rattler's strike
+- **Frontier Pricing**: All prices in good ol' 1800s currency
+- **Clint's Corner**: Click the snake for some wisdom from the legendary Clint Eastwood
 
-### Features
-- Real-time sales tracking
-- Random sale generation
-- Sortable data tables
-- Total sales summary
-- Support for multiple exotic animals
+## 🌵 Setup Instructions
 
-### Tech Stack
-- Frontend: Vanilla JavaScript, HTML5, CSS3
-- Backend: Python/Flask
-- Database: SQLite
-- Development: MacBook Pro M3
-
-### Project Structure
-```
-animal_sales/
-├── backend/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── db_init.py
-│   └── animals.py
-├── database/
-│   └── schema.sql
-├── frontend/
-│   ├── index.html
-│   ├── styles.css
-│   └── script.js
-└── app.py
-```
-
-### Quick Start
-
-1. Clone the repository:
+1. **Gather Yer Supplies**
 ```bash
-git clone git@github.com:Travbz/cursor-rules-practice.git
-cd cursor-rules-practice/animal_sales
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
-2. Run the setup script:
+2. **Set Up the Trading Post**
 ```bash
-./setup.sh
+python3 backend/db_init.py
 ```
 
-3. Access the application:
-- Frontend: http://localhost:8081
-- Backend API: http://localhost:5001
+3. **Open for Business**
+```bash
+# Start the backend (Port 5001)
+python3 app.py
 
-### Available Animals
-- African Grey Parrot ($1,200)
-- Ball Python ($300)
-- Bearded Dragon ($150)
-- Bengal Cat ($2,500)
-- Capybara ($3,000)
-- And many more!
+# In another terminal, start the frontend (Port 8081)
+python3 static_server.py
+```
 
-### API Endpoints
-- `GET /api/sales`: Retrieve all sales
-- `POST /api/generate`: Generate a new random sale
-- `GET /api/sales/by-animal`: Get sales grouped by animal
+4. **Visit the Trading Post**: Mosey on over to `http://localhost:8081`
 
-## Development
+## 🏹 Tech Stack
 
-The project uses a structured workflow defined in `.cursorrules` for consistent development practices. 
+- **Frontend**: Pure JavaScript, HTML, CSS (No fancy frameworks needed in the frontier!)
+- **Backend**: Flask (Python)
+- **Database**: SQLite (Simple and reliable as a trusty steed)
+
+## 🌟 Special Features
+
+- Western-themed name generator
+- Period-appropriate pricing
+- Quantity tracking for bulk purchases
+- Real-time price calculations
+- Responsive design that works on any size wagon... err, screen
+
+## 🤝 Contributing
+
+Got some ideas to make this trading post even better? Well saddle up partner, and:
+1. Fork this here repository
+2. Create yer feature branch
+3. Commit yer changes
+4. Push to the branch
+5. Open a pull request
+
+## 🎯 License
+
+This project is free as a tumbleweed - MIT License
+
+---
+
+*"Sometimes if you want to see a change for the better, you have to take things into your own hands."* - Clint Eastwood 
