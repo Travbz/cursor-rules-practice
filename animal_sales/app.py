@@ -1,6 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from backend.models import db, Sale
-from backend.animals import generate_random_purchase
+from backend.animals import generate_random_purchase, ANIMALS
 from datetime import datetime
 import os
 
@@ -22,10 +22,28 @@ def after_request(response):
 
 db.init_app(app)
 
+@app.route('/api/animals', methods=['GET'])
+def get_animals():
+    # Return original prices as they are (in dollars)
+    return jsonify(ANIMALS)
+
 @app.route('/api/sales', methods=['GET'])
 def get_sales():
     sales = Sale.query.all()
     return jsonify({'sales': [sale.to_dict() for sale in sales]})
+
+@app.route('/api/sales', methods=['POST'])
+def create_sale():
+    data = request.get_json()
+    sale = Sale(
+        customer_name=data['customer_name'],
+        animal=data['animal'],
+        quantity=data['quantity'],
+        price=data['price']
+    )
+    db.session.add(sale)
+    db.session.commit()
+    return jsonify(sale.to_dict())
 
 @app.route('/api/generate', methods=['POST'])
 def generate_sale():
@@ -35,6 +53,7 @@ def generate_sale():
         sale = Sale(
             customer_name=sale_data['customer_name'],
             animal=purchase['animal'],
+            quantity=purchase['quantity'],
             price=purchase['price']
         )
         db.session.add(sale)

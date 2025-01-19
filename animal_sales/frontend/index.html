@@ -3,37 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exotic Animal Sales Tracker</title>
+    <title>Frontier Trading Post - Exotic Animals</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <button id="themeToggle" class="theme-toggle" title="Toggle Cowboy Mode">🌴</button>
     <div class="container">
-        <h1>🦜 Exotic Animal Sales Tracker 🐍</h1>
+        <h1>FRONTIER<br>TRADING POST</h1>
+        <span class="snake-quote" id="snakeQuote">🐍</span>
+        <div id="quoteText" class="quote-text"></div>
         
         <div class="controls">
-            <button id="generateSale" class="btn">Generate New Sale</button>
+            <div>
+                <button id="generateSale" class="btn">Strike a Deal</button>
+                <button id="buyStock" class="btn btn-secondary">Buy Stock</button>
+            </div>
             <div class="summary">
                 <span>Total Sales: $<span id="totalSales">0.00</span></span>
-                <span>Total Transactions: <span id="totalTransactions">0</span></span>
+                <span>Critters Sold: <span id="totalTransactions">0</span></span>
             </div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="bountyHunterFilter">Customer Name:</label>
+                <input type="text" id="bountyHunterFilter" placeholder="Search customers...">
+            </div>
+            <div class="filter-group">
+                <label for="varmintFilter">Animal Type:</label>
+                <input type="text" id="varmintFilter" placeholder="Search animals...">
+            </div>
+            <div class="filter-group">
+                <label for="priceFilter">Min Price:</label>
+                <input type="number" id="priceFilter" placeholder="Minimum price...">
+            </div>
+            <div class="filter-group">
+                <label for="dateFilter">Date Range:</label>
+                <select id="dateFilter">
+                    <option value="all">All Time</option>
+                    <option value="today">Today</option>
+                    <option value="week">This Week</option>
+                    <option value="month">This Month</option>
+                </select>
+            </div>
+            <button id="clearFilters" class="btn btn-secondary">Clear Filters</button>
         </div>
 
         <div class="table-container">
             <table>
                 <thead>
                     <tr>
-                        <th data-sort="id">ID ⇅</th>
-                        <th data-sort="customer_name">Customer ⇅</th>
-                        <th data-sort="animal">Animal ⇅</th>
-                        <th data-sort="price">Price ⇅</th>
-                        <th data-sort="sale_date">Date ⇅</th>
+                        <th data-sort="id">Sale #</th>
+                        <th data-sort="customer_name">Customer</th>
+                        <th data-sort="animal">Animal</th>
+                        <th data-sort="quantity">Quantity</th>
+                        <th data-sort="price">Price</th>
+                        <th data-sort="sale_date">Sale Date</th>
                     </tr>
                 </thead>
                 <tbody id="salesTable">
                     <!-- Sales data will be inserted here -->
                 </tbody>
             </table>
+        </div>
+    </div>
+    
+    <!-- Buy Stock Modal -->
+    <div id="buyStockModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Buy New Stock</h2>
+            <form id="buyStockForm">
+                <div class="form-group">
+                    <label for="customerName">Your Name:</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="animalSelect">Select Animal:</label>
+                    <select id="animalSelect" required>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Total Price:</label>
+                    <span id="priceDisplay" class="price-display">$0.00</span>
+                </div>
+                <button type="submit" class="btn">Seal the Deal</button>
+            </form>
         </div>
     </div>
     <script src="script.js"></script>
