@@ -1,0 +1,25 @@
+{
+    "chat.contextFiles": {
+        "backend": [
+            "cursor-rules-practice/animal_sales/backend/animals.py",
+            "cursor-rules-practice/animal_sales/backend/models.py",
+            "cursor-rules-practice/animal_sales/backend/db_init.py",
+            "cursor-rules-practice/animal_sales/backend/__init__.py",
+            "cursor-rules-practice/animal_sales/app.py"
+        ],
+        "frontend": [
+            "cursor-rules-practice/animal_sales/frontend/index.html",
+            "cursor-rules-practice/animal_sales/frontend/script.js",
+            "cursor-rules-practice/animal_sales/frontend/styles.css"
+        ],
+        "deps": [
+            "cursor-rules-practice/animal_sales/requirements.txt",
+            "cursor-rules-practice/animal_sales/setup.sh",
+            "cursor-rules-practice/animal_sales/cleanup.sh",
+            "cursor-rules-practice/animal_sales/static_server.py"
+        ],
+        "app": [
+            "cursor-rules-practice/animal_sales/app.py"
+        ]
+    }
+}
