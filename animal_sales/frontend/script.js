@@ -261,6 +261,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Complaint button rickroll with direct redirect
+    document.getElementById('fileComplaint').addEventListener('click', () => {
+        window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0&autoplay=1&fs=1";
+    });
+
     document.getElementById('generateSale').addEventListener('click', generateSale);
     
     document.querySelectorAll('th[data-sort]').forEach(th => {

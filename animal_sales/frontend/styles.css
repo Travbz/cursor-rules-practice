@@ -348,6 +348,19 @@ tr:hover {
     color: white;
 }
 
+.btn-danger {
+    background: transparent;
+    border: 2px solid #8b0000;
+    color: #8b0000;
+    align-self: end;
+    margin-top: auto;
+}
+
+.btn-danger:hover {
+    background: #8b0000;
+    color: white;
+}
+
 /* Modal Styles */
 .modal {
     display: none;

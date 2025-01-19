@@ -2,8 +2,6 @@
 
 Welcome to the wildest trading post this side of the Mississippi! This here establishment helps track the sale of exotic critters in true western style.
 
-A readme's worth ain't in how pretty it looks, but in how well it tells the tale.
-
 ## 🌵 Features
 
 - Strike deals for exotic animals
@@ -144,55 +142,3 @@ This project is free as a tumbleweed - MIT License
 ---
 
 *"Sometimes if you want to see a change for the better, you have to take things into your own hands."* - Clint Eastwood 
-
-## 🎯 Quick Draw Mode (YOLO)
-
-For them gunslingers who need to build this in one shot:
-
-### 🌪 Tornado Mode Triggers
-- Say "howdy" for John Wayne quotes
-- Say "bang bang" to enable YOLO mode
-- Default responses include Clint Eastwood wisdom
-
-### 🚀 One-Shot Build Order
-1. **Backend First**
-   - Set up virtual environment
-   - Install Flask, SQLAlchemy
-   - Create database models
-   - Implement API endpoints
-   - Test with curl/Postman
-
-2. **Frontend Foundation**
-   - Basic HTML structure
-   - Core CSS styling
-   - Essential JavaScript functions
-   - Connect to backend
-
-3. **Feature Integration**
-   - Add sorting/filtering
-   - Implement modals
-   - Add quantity tracking
-   - Enable western quotes
-   - Test rickroll complaint system
-
-### 🎲 Random Generation Rules
-- Customer names: 70% western, 30% modern
-- Prices: Based on animal rarity
-- Quantities: Random 1-5 per transaction
-
-### 🔧 Port Configuration
-- Backend: 5001 (Remember, the year the West was won!)
-- Frontend: 8081 (Because 8080 is too mainstream)
-
-### 🎨 Style Guidelines
-- Use western-themed CSS variables
-- Maintain responsive design
-- Keep the frontier aesthetic
-- No modern frameworks needed
-
-### 🐛 Common Pitfalls
-- Check CORS settings
-- Verify database initialization
-- Test all API endpoints
-- Ensure proper error handling
-- Validate form inputs
