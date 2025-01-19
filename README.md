@@ -1,40 +1,125 @@
 # 🤠 Frontier Trading Post
 
-Welcome to the wildest animal trading post this side of the Mississippi! This here establishment helps ya keep track of all yer critter dealings in proper frontier fashion.
+Welcome to the wildest trading post this side of the Mississippi! This here establishment helps track the sale of exotic critters in true western style.
 
-## 🐎 Features
+## 🌵 Features
 
-- **Strike a Deal**: Generate random sales with our finest selection of frontier animals
-- **Buy Stock**: Hand-pick yer own critters, set the quantity, and seal the deal
-- **Track Yer Sales**: Keep tabs on every transaction in our fancy ledger
-- **Search & Sort**: Find any varmint or customer faster than a rattler's strike
-- **Frontier Pricing**: All prices in good ol' 1800s currency
-- **Clint's Corner**: Click the snake for some wisdom from the legendary Clint Eastwood
+- Strike deals for exotic animals
+- Track sales with quantity and pricing
+- Filter and sort your transactions
+- Generate random sales with western flair
+- Buy new stock directly
+- File complaints (if you dare! 🤠)
 
-## 🌵 Setup Instructions
+## 🐎 API Documentation
 
-1. **Gather Yer Supplies**
+### GET /api/sales
+Fetches all sales records from the trading post.
+
+**Response:**
+```json
+{
+    "sales": [
+        {
+            "id": 1,
+            "customer_name": "Wild Bill",
+            "animal": "Ornery Bull",
+            "quantity": 2,
+            "price": 11000.00,
+            "sale_date": "2024-03-18T10:30:00"
+        }
+    ]
+}
+```
+
+### POST /api/sales
+Records a new sale at the trading post.
+
+**Request Body:**
+```json
+{
+    "customer_name": "Doc Holliday",
+    "animal": "Mean ol' Buckin Bull",
+    "quantity": 1,
+    "price": 5500.00
+}
+```
+
+### GET /api/animals
+Fetches available animals and their prices.
+
+**Response:**
+```json
+{
+    "Ornery Bull": 5500,
+    "Dirty Rotten Mule": 800,
+    "Wild Mustang": 3500,
+    "Mean ol' Buckin Bull": 6000
+}
+```
+
+### POST /api/generate
+Generates a random sale with western flair.
+
+**Response:**
+```json
+{
+    "sale": {
+        "customer_name": "Quick Draw McGraw",
+        "purchases": [
+            {
+                "animal": "Wild Mustang",
+                "quantity": 2,
+                "price": 7000.00
+            }
+        ],
+        "total": 7000.00
+    }
+}
+```
+
+## 🌟 Setup Instructions
+
+### Gather Yer Supplies
 ```bash
+# Create and saddle up your virtual environment
 python3 -m venv venv
 source venv/bin/activate
+
+# Install the necessities
 pip install -r requirements.txt
 ```
 
-2. **Set Up the Trading Post**
+### Open for Business
 ```bash
-python3 backend/db_init.py
+# Fire up the backend
+python app.py
+
+# Serve the frontend (in a new terminal)
+cd frontend
+python -m http.server 8081
 ```
 
-3. **Open for Business**
-```bash
-# Start the backend (Port 5001)
-python3 app.py
+Visit `http://localhost:8081` to start trading!
 
-# In another terminal, start the frontend (Port 8081)
-python3 static_server.py
-```
+## 🎯 Special Features
 
-4. **Visit the Trading Post**: Mosey on over to `http://localhost:8081`
+- Western-themed name generation
+- Clint Eastwood quotes
+- Surprise for complaint filers
+- Full sorting and filtering capabilities
+
+## 🤝 Contributing
+
+Got some ideas to make this trading post even better? Well saddle up partner, and follow these steps:
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+Remember: Code like you're in the Wild West - fast, efficient, and with style! 🌵
 
 ## 🏹 Tech Stack
 
@@ -49,15 +134,6 @@ python3 static_server.py
 - Quantity tracking for bulk purchases
 - Real-time price calculations
 - Responsive design that works on any size wagon... err, screen
-
-## 🤝 Contributing
-
-Got some ideas to make this trading post even better? Well saddle up partner, and:
-1. Fork this here repository
-2. Create yer feature branch
-3. Commit yer changes
-4. Push to the branch
-5. Open a pull request
 
 ## 🎯 License
 
