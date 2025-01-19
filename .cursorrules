@@ -1,11 +1,95 @@
-CONFIGURATION: {
-    "programming_language": ["python", "javascript"],
-    "yolo_mode": "is_bang_bang?" ,
-    "max_iterations": 3,
+{
+    "session": {
+        "name": "Exotic Animal Sales Tracker",
+        "type": "full_stack",
+        "duration": "single_session"
+    },
+    "tech_stack": {
+        "frontend": {
+            "language": "javascript",
+            "framework": "vanilla",
+            "styling": "css"
+        },
+        "backend": {
+            "language": "python",
+            "framework": "flask",
+            "database": "sqlite"
+        }
+    },
+    "project_structure": {
+        "root_dir": "./animal_sales",
+        "directories": [
+            "frontend",
+            "backend",
+            "database"
+        ]
+    },
+    "development": {
+        "ports": {
+            "backend": 5001,
+            "frontend": 8081
+        },
+        "environment": {
+            "python_version": "3.12",
+            "node_version": "not_required"
+        }
+    },
+    "workflow": {
+        "steps": [
+            {
+                "order": 1,
+                "name": "project_setup",
+                "tasks": [
+                    "Create directory structure",
+                    "Initialize virtual environment",
+                    "Install dependencies",
+                    "Create .gitignore"
+                ]
+            },
+            {
+                "order": 2,
+                "name": "backend_development",
+                "tasks": [
+                    "Create database models",
+                    "Set up Flask routes",
+                    "Implement CORS",
+                    "Create data generation utilities"
+                ]
+            },
+            {
+                "order": 3,
+                "name": "frontend_development",
+                "tasks": [
+                    "Create HTML structure",
+                    "Implement styling",
+                    "Add JavaScript functionality",
+                    "Connect to backend API"
+                ]
+            },
+            {
+                "order": 4,
+                "name": "automation",
+                "tasks": [
+                    "Create setup script",
+                    "Create cleanup script",
+                    "Add static file server"
+                ]
+            }
+        ]
+    },
     "success_criteria": [
-       "UI loads customer data"
+        "Backend API endpoints working",
+        "Frontend displays data correctly",
+        "Data generation functional",
+        "Clean project shutdown"
     ],
-    "working_directory": "./news-gap/"
+    "fun_features": {
+        "cowboy_mode": {
+            "howdy": "John Wayne quote response",
+            "bang_bang": "Billy the Kid mode",
+            "default": "Clint Eastwood quote"
+        }
+    }
 }
 
 Workstation is a Macbook Pro on M3
