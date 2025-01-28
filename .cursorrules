@@ -1,364 +1,96 @@
-{
-    "session": {
-        "name": "Frontier Trading Post - Exotic Animal Sales",
-        "type": "full_stack",
-        "duration": "single_session",
-        "theme": "western",
-        "mode": "yolo_ready"
-    },
-    "tech_stack": {
-        "frontend": {
-            "language": "javascript",
-            "framework": "vanilla",
-            "styling": "css",
-            "required_features": [
-                "modal_system",
-                "sorting_tables",
-                "filter_system",
-                "price_calculator",
-                "rickroll_integration"
-            ]
-        },
-        "backend": {
-            "language": "python",
-            "framework": "flask",
-            "database": "sqlite",
-            "required_packages": [
-                "flask==3.0.0",
-                "flask-sqlalchemy==3.1.1",
-                "flask-cors==4.0.0",
-                "faker==20.1.0",
-                "python-dotenv==1.0.0"
-            ]
-        }
-    },
-    "project_structure": {
-        "root_dir": "./animal_sales",
-        "directories": [
-            "frontend",
-            "backend",
-            "database"
-        ],
-        "key_files": {
-            "backend": [
-                "app.py",
-                "models.py",
-                "animals.py",
-                "db_init.py"
-            ],
-            "frontend": [
-                "index.html",
-                "styles.css",
-                "script.js"
-            ],
-            "config": [
-                ".env",
-                ".gitignore",
-                "requirements.txt"
-            ]
-        }
-    },
-    "development": {
-        "ports": {
-            "backend": 5001,
-            "frontend": 8081
-        },
-        "environment": {
-            "python_version": "3.12",
-            "node_version": "not_required",
-            "os": "cross_platform"
-        }
-    },
-    "workflow": {
-        "steps": [
-            {
-                "order": 1,
-                "name": "project_setup",
-                "tasks": [
-                    "Create directory structure",
-                    "Initialize virtual environment",
-                    "Install dependencies",
-                    "Create .gitignore",
-                    "Initialize database schema",
-                    "Set up CORS configuration"
-                ]
-            },
-            {
-                "order": 2,
-                "name": "backend_development",
-                "tasks": [
-                    "Create database models with quantity support",
-                    "Set up Flask routes with error handling",
-                    "Implement CORS with proper origins",
-                    "Create data generation with western names",
-                    "Add price calculation logic",
-                    "Implement filtering and sorting"
-                ]
-            },
-            {
-                "order": 3,
-                "name": "frontend_development",
-                "tasks": [
-                    "Create responsive HTML structure",
-                    "Implement western-themed CSS",
-                    "Add JavaScript functionality",
-                    "Connect to backend API",
-                    "Implement modal system",
-                    "Add rickroll complaint system"
-                ]
-            }
-        ]
-    },
-    "success_criteria": [
-        "Backend API endpoints working with proper status codes",
-        "Frontend displays data with proper formatting",
-        "Data generation includes quantities",
-        "Clean project shutdown",
-        "All CRUD operations functional",
-        "Proper error handling implemented",
-        "Western theme consistent throughout",
-        "Rickroll complaint system operational"
-    ],
-    "fun_features": {
-        "cowboy_mode": {
-            "howdy": "John Wayne quote response",
-            "bang_bang": "Billy the Kid mode",
-            "default": "Clint Eastwood quote"
-        },
-        "name_generation": {
-            "western_ratio": 0.7,
-            "modern_ratio": 0.3,
-            "sample_names": [
-                "Wild Bill",
-                "Doc Holliday",
-                "Calamity Jane",
-                "Quick Draw McGraw"
-            ]
-        },
-        "animals": {
-            "types": [
-                "Ornery Bull",
-                "Dirty Rotten Mule",
-                "Wild Mustang",
-                "Mean ol' Buckin Bull"
-            ],
-            "price_range": {
-                "min": 35.00,
-                "max": 80.00
-            }
-        },
-        "error_messages": {
-            "404": "This ain't the trail you're looking for",
-            "500": "Looks like our horse threw a shoe",
-            "validation": "That ain't how we do business round here"
-        }
-    },
-    "testing": {
-        "backend": [
-            "Test all API endpoints",
-            "Verify database operations",
-            "Check error handling",
-            "Validate CORS settings"
-        ],
-        "frontend": [
-            "Test responsive design",
-            "Verify sorting functionality",
-            "Check filter operations",
-            "Confirm rickroll integration"
-        ]
-    }
-}
+# Frontier Trading Post - Exotic Animal Sales
 
-Workstation is a Macbook Pro on M3
+## Project Overview
+Welcome to the Frontier Trading Post, where the Wild West meets modern technology. This full-stack application brings the spirit of frontier trading to life with a blend of western charm and modern functionality.
 
-# Rules that apply to all interactions and signal to me that you are context aware:
-    - Initiate each interaction with a unquoted Clint Eastwood quote with no "- Clint Eastwood" reference.
-    - If i say "howdy" reply with a John Wayne quote.
-    - If i say "bang bang" you should respond like Billy the Kid but keep yer yappin to a minimum, and proceed to the next iteration bc yolo mode is enabled.
+## Technical Stack
 
-# Animal Sales Tracking Application
+### Frontend
+- Pure vanilla JavaScript for raw power and control
+- Custom CSS styling with authentic western aesthetics
+- Key Features:
+  * Interactive modal system for purchases
+  * Sortable inventory tables
+  * Advanced filtering system
+  * Real-time price calculator
+  * Hidden feature: Rickroll integration for complaints
+
+### Backend
+Built on Python 3.12 with:
+- Flask 3.0.0 serving as our trusty steed
+- SQLAlchemy managing our data corral
+- SQLite keeping our records safe
+- CORS ensuring secure trading
+- Faker generating authentic western names
 
 ## Project Structure
 ```
 animal_sales/
-├── backend/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── db_init.py
-│   └── animals.py
-├── database/
-│   └── schema.sql
 ├── frontend/
-│   ├── index.html
-│   ├── styles.css
-│   └── script.js
-└── app.py
+│   ├── index.html    (trading post interface)
+│   ├── styles.css    (western styling)
+│   └── script.js     (trading logic)
+├── backend/
+│   ├── app.py        (main server)
+│   ├── models.py     (data schemas)
+│   ├── animals.py    (inventory management)
+│   └── db_init.py    (database setup)
+└── database/         (data storage)
 ```
 
-## Data Models
-
-### Animals Available
-```python
-ANIMALS = {
-    'Ornery Bull': 55,
-    'Dirty Rotten Mule': 8,
-    'Mean Ol Buckin Bull': 65,
-    'Kickin Mule': 12,
-    'Rattler with Attitude': 3,
-    'Stubborn Pack Donkey': 9,
-    'Wild Mustang': 45,
-    'Rough Stock Bull': 70,
-    'One-Eyed Coyote': 2,
-    'Fence-Jumpin Mare': 35,
-    'Untamed Bronco': 50,
-    'No Good Billy Goat': 4,
-    'Spittin Llama': 20,
-    'Angry Ranch Dog': 3,
-    'Ornery Longhorn': 48,
-    'Buckin Paint Horse': 38,
-    'Snake-Bit Quarter Horse': 28,
-    'Cattle-Chasin Heeler': 6,
-    'Barn-Bustin Buffalo': 80,
-    'Outlaw Stallion': 60,
-    'Mangy Prairie Dog': 1,
-    'Cross-Eyed Rooster': 2,
-    'Limpin Jackrabbit': 1,
-    'Toothless Raccoon': 2,
-    'Three-Legged Skunk': 1,
-    'Tone-Deaf Turkey': 3,
-    'Lazy Pack Rat': 1,
-    'Grumpy Groundhog': 2,
-    'Clumsy Armadillo': 2,
-    'Balding Vulture': 1
-}
-```
-
-### Database Schema
-```sql
-CREATE TABLE sales (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    customer_name TEXT NOT NULL,
-    animal TEXT NOT NULL,
-    price DECIMAL(10,2) NOT NULL,
-    sale_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-## Components
-
-### Backend (Python)
-
-#### models.py
-- SQLAlchemy model for Sales table
-- Database connection management
-
-#### animals.py
-- Contains ANIMALS dictionary with prices
-- Functions for generating random sales:
-  - generate_customer_name()
-  - generate_random_purchase(): Selects 1-4 random animals
-
-#### app.py (Flask Application)
-Routes:
-- GET /api/sales: Returns all sales data
-- POST /api/generate: Generates new random sale
-- GET /api/sales/by-animal: Returns sales grouped by animal
-
-### Frontend
-
-#### index.html
-- Clean table layout
-- "Generate Sale" button
-- Sorting controls for each column
-- Total sales summary
-
-#### script.js
-- Handles "Generate Sale" button clicks
-- Fetches and displays sales data
-- Implements table sorting
-- Updates totals
-
-## API Endpoints
-
-### GET /api/sales
-Response:
-```json
-{
-    "sales": [
-        {
-            "id": 1,
-            "customer_name": "John Smith",
-            "animal": "Bengal Cat",
-            "price": 2500.00,
-            "sale_date": "2025-01-18T10:30:00"
-        }
-    ]
-}
-```
-
-### POST /api/generate
-Response:
-```json
-{
-    "sale": {
-        "customer_name": "Alice Johnson",
-        "purchases": [
-            {
-                "animal": "Macaw",
-                "price": 2000.00
-            },
-            {
-                "animal": "Tortoise",
-                "price": 800.00
-            }
-        ],
-        "total": 2800.00
-    }
-}
-```
-
-## Development Setup (MacBook Pro M1)
-
-1. Create and activate virtual environment:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-2. Install dependencies:
-```bash
-pip3 install flask flask-sqlalchemy faker python-dotenv
-```
-
-3. Initialize database:
-```bash
-python3 backend/db_init.py
-```
-
-4. Run application:
-```bash
-python3 app.py
-```
-
-5. Serve frontend:
-```bash
-cd frontend
-python3 -m http.server 8080
-```
-
-Access:
-- Backend API: http://localhost:5000
-- Frontend: http://localhost:8080
+## Development Setup
+- Backend runs on port 5001
+- Frontend served on port 8081
+- No Node.js required - pure and simple
 
 ## Features
-- Empty table on initial load
-- Click button to generate random sale
-- Each sale includes 1-4 random animals
-- Sortable by animal type, price, or date
-- Persistent data between page refreshes
-- Summary of total sales
 
-Note: For M1 MacBook Pro optimizations:
-- Using native Python 3 for Apple Silicon
-- SQLite is natively supported on M1
-- Local development servers run natively without Rosetta
+### Animal Inventory
+Our current stock includes:
+- Ornery Bulls (starting at $55)
+- Dirty Rotten Mules ($8)
+- Wild Mustangs ($45)
+- Mean ol' Buckin Bulls ($65)
+- And many more critters!
+
+Prices range from $35 to $80 per head
+
+### Trading System
+- Live price calculations
+- Bulk purchase support
+- Complete transaction history
+- Advanced filtering by:
+  * Customer name
+  * Animal type
+  * Price range
+  * Trading date
+
+### Western Charm
+- Authentic name generation (70% western, 30% modern)
+- Famous quotes from:
+  * Clint Eastwood
+  * John Wayne
+  * Billy the Kid
+
+### Error Messages
+- 404: "This ain't the trail you're looking for"
+- 500: "Looks like our horse threw a shoe"
+- Validation: "That ain't how we do business round here"
+
+## Testing Requirements
+- Backend:
+  * API endpoint verification
+  * Database operation checks
+  * Error handling validation
+  * CORS configuration testing
+
+- Frontend:
+  * Responsive design checks
+  * Sort functionality testing
+  * Filter system validation
+  * Rickroll integration verification
+
+## Special Commands
+- Type "howdy" for a John Wayne quote
+- Type "bang bang" for Billy the Kid mode
+- Default responses feature Clint Eastwood's wisdom

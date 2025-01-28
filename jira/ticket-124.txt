@@ -1,0 +1,18 @@
+ticket-124
+
+Description:
+We want to refactor the backend adopt our new counterstrikey theme.
+
+We need to drop the animal sales and adopt the arms dealing strategy for counter strike in game weapons
+The weapons should be the same as the ones in the game.
+They should be priced accoringly, ie more expensive than stupid animals.
+
+Database may need to be updated to support the new weapons.
+
+
+Apis should be updated to support the new weapons naming convention.
+
+Success Criteria:
+
+- Backend should be refactored to support the new weapons.
+- Api updated to support the new weapons naming convention.

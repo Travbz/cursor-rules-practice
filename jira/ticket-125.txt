@@ -1,0 +1,10 @@
+ticket-125
+
+Description:
+Update the setup shell script to use CounterStrike themed words in its echo statements, currently it is very western.
+
+
+Success Criteria:
+- The setup shell script should use CounterStrike themed words in its echo statements.
+
+
