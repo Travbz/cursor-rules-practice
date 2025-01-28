@@ -1,25 +1,25 @@
 {
     "chat.contextFiles": {
         "backend": [
-            "/Users/travops/cursor-rules-practice/app/backend/animals.py",
-            "/Users/travops/cursor-rules-practice/app/backend/models.py",
-            "/Users/travops/cursor-rules-practice/app/backend/db_init.py",
-            "/Users/travops/cursor-rules-practice/app/backend/__init__.py",
-            "/Users/travops/cursor-rules-practice/app/app.py"
+            "cursor-rules-practice/animal_sales/backend/animals.py",
+            "cursor-rules-practice/animal_sales/backend/models.py",
+            "cursor-rules-practice/animal_sales/backend/db_init.py",
+            "cursor-rules-practice/animal_sales/backend/__init__.py",
+            "cursor-rules-practice/animal_sales/app.py"
         ],
         "frontend": [
-            "/Users/travops/cursor-rules-practice/app/frontend/index.html",
-            "/Users/travops/cursor-rules-practice/app/frontend/script.js",
-            "/Users/travops/cursor-rules-practice/app/frontend/styles.css"
+            "cursor-rules-practice/animal_sales/frontend/index.html",
+            "cursor-rules-practice/animal_sales/frontend/script.js",
+            "cursor-rules-practice/animal_sales/frontend/styles.css"
         ],
         "deps": [
-            "/Users/travops/cursor-rules-practice/app/requirements.txt",
-            "/Users/travops/cursor-rules-practice/app/setup.sh",
-            "/Users/travops/cursor-rules-practice/app/cleanup.sh",
-            "/Users/travops/cursor-rules-practice/app/static_server.py"
+            "cursor-rules-practice/animal_sales/requirements.txt",
+            "cursor-rules-practice/animal_sales/setup.sh",
+            "cursor-rules-practice/animal_sales/cleanup.sh",
+            "cursor-rules-practice/animal_sales/static_server.py"
         ],
         "app": [
-            "/Users/travops/cursor-rules-practice/app/app.py"
+            "cursor-rules-practice/animal_sales/app.py"
         ]
     }
 }
